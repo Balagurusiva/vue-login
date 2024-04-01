@@ -3,12 +3,8 @@
         home page
     </div>
 </template>
-
-
 <script setup> 
  
- 
-
 import { logged } from '~/store/logged'; 
 
 const router = useRouter()
