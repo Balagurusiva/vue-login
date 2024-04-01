@@ -6,7 +6,15 @@
 
 
 <script setup>
+
+import { logged } from '~/store/logged'; 
+
+const router = useRouter()
+if(!logged.value){ 
+        router.push('/auth/register')
+}
+ 
 onMounted(() => {
-    alert('logged in')
+    if(logged.value ){alert('logged in')}
 })
 </script>

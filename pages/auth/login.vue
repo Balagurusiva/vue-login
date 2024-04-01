@@ -1,4 +1,5 @@
 <script setup>
+import { logged } from '~/store/logged'; 
 const router = useRouter()
 	const user_login = ref({
 		email: "",
@@ -17,6 +18,7 @@ const router = useRouter()
 		}); 
 		const { msg } = res.data.value;
 		if (msg === "login successfull") {
+            logged.value = true
 			router.push("/");
 		}
          else if(msg === "data required"){

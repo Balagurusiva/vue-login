@@ -1,4 +1,5 @@
 <script setup>
+import { logged } from '~/store/logged'; 
 	const router = useRouter();
 	const user_login = ref({
 		name: "",
@@ -15,9 +16,9 @@
 				password: user_login.value.password,
 			},
 		});
-		const { msg } = res.data.value;
-		console.log(msg);
+		const { msg } = res.data.value; 
 		if (msg === "login succesfull") {
+            logged.value = true
 			router.push("/");
 		}else{
             alert("invalid argument")
