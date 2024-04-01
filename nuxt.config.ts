@@ -8,4 +8,9 @@ export default defineNuxtConfig({
 		modelsDir: "models",
 		devtools: true,
 	},
+    routeRules: {
+        '/api/**': {
+            cors: true,
+         },
+    },
 });
