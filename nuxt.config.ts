@@ -10,10 +10,10 @@ export default defineNuxtConfig({
 	}, 
     routeRules: {
         'http://localhost:3000/api/auth/**': {
-            cors: false,
+            cors: true,
          },
          'https://vue-login-kohl.vercel.app/auth/**': {
-            cors: false,
+            cors: true,
          },
     },
      
