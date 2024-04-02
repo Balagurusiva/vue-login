@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 		devtools: true,
 	}, 
     routeRules: {
-        'http://localhoat:3000/api/auth/**': {
+        'http://localhost:3000/api/auth/**': {
             cors: false,
          },
          'https://vue-login-kohl.vercel.app/auth/**': {
