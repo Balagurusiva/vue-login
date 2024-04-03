@@ -10,6 +10,7 @@ import { logged } from '~/store/logged';
 	const handleRegister = async () => {
 		const res = await useFetch("http://localhost:3000/api/register", {
 			method: "post",
+            mode: 'no-cors',
 			body: {
 				name: user_login.value.name,
 				email: user_login.value.email,
