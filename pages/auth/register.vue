@@ -21,6 +21,7 @@
 			},
 			
 		});
+        console.log(data)
         console.log(toRaw(data.value))
 		const {msg}  = toRaw(data.value)
         console.log(msg)
