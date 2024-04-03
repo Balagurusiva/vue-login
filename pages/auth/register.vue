@@ -22,10 +22,12 @@
 			
 		});
         console.log(data)
+        console.log(data._rawValue)
         console.log(toRaw(data.value))
-		const {msg}  = toRaw(data.value)
-        console.log(msg)
-		if (msg === "login succesfull") {
+
+		//const {msg}  = toRaw(data.value)
+        //console.log(msg)
+		if (data.value === "login succesfull") {
 			logged.value = true;
 			router.push("/");
 		} else {

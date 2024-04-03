@@ -6,10 +6,11 @@ export default defineEventHandler(async (event) => {
             name, email, password
         })
         setResponseStatus(event, 202)
-        return { msg: "login succesfull" }
+        //return { msg: "login succesfull" }
+        return "login succesfull"
     } else {
 
-        return { msg: "invalid arguments or data missing" }
+        return  "invalid arguments or data missing"
     }
 
 })
