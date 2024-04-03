@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
 
-    const { email, password } = await readBody(event)
+    const { email, password } =  JSON.parse(await readBody(event))
 
     if (email != '' & password != '') {
         const user = await User.find({ email: email })

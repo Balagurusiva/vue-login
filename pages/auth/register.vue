@@ -1,5 +1,5 @@
 <script setup>
-import { logged } from '~/store/logged'; 
+	import { logged } from "~/store/logged";
 	const router = useRouter();
 	const user_login = ref({
 		name: "",
@@ -10,20 +10,24 @@ import { logged } from '~/store/logged';
 	const handleRegister = async () => {
 		const res = await useFetch("http://localhost:3000/api/register", {
 			method: "post",
-            mode: 'no-cors',
+            mode: "no-cors",
+			headers: {
+				"Content-Type": "application/json", 
+			},
 			body: {
 				name: user_login.value.name,
 				email: user_login.value.email,
 				password: user_login.value.password,
 			},
+			
 		});
-		const { msg } = res.data.value; 
+		const { msg } = res.data.value;
 		if (msg === "login succesfull") {
-            logged.value = true
+			logged.value = true;
 			router.push("/");
-		}else{
-            alert("invalid argument")
-        }
+		} else {
+			alert("invalid argument");
+		}
 	};
 </script>
 

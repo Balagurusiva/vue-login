@@ -11,7 +11,7 @@ const router = useRouter()
         
 		const res = await useFetch("http://localhost:3000/api/login", {
 			method: "post",
-            mode: 'no-cors',
+            mode:"no-cors",
 			body: {
 				email: user_login.value.email,
 				password:user_login.value.password,

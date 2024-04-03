@@ -8,16 +8,5 @@ export default defineNuxtConfig({
 		modelsDir: "models",
 		devtools: true,
 	}, 
-    routeRules: { 
-        '/api/auth/**': {
-            cors: true,
-         },
-        'http://localhost:3000/api/auth/**': {
-            cors: true,
-         },
-         'https://vue-login-kohl.vercel.app/auth/**': {
-            cors: true,
-         },
-    },
-     
+ 
 });
