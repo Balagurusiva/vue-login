@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         'http://localhost:3000/api/auth/**': {
             cors: true,
          },
-         'https://vue-login-kohl.vercel.app/auth/**': {
+         'https://vue-login-kohl.vercel.app/**': {
             cors: true,
          },
     },
