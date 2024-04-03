@@ -8,7 +8,7 @@
 	});
 
 	const handleRegister = async () => {
-		const res = await useFetch("http://localhost:3000/api/register", {
+		const {data} = await useFetch("http://localhost:3000/api/register", {
 			method: "post",
             mode: "no-cors",
 			headers: {
@@ -21,13 +21,22 @@
 			},
 			
 		});
-		const { msg } = res.data.value;
+        console.log(toRaw(data.value))
+		const {msg}  = toRaw(data.value)
+        console.log(msg)
 		if (msg === "login succesfull") {
 			logged.value = true;
 			router.push("/");
 		} else {
 			alert("invalid argument");
 		}
+		// const { msg } = res.data.value;
+		// if (msg === "login succesfull") {
+		// 	logged.value = true;
+		// 	router.push("/");
+		// } else {
+		// 	alert("invalid argument");
+		// }
 	};
 </script>
 

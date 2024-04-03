@@ -9,7 +9,7 @@ const router = useRouter()
 	const handleLogin = async () => { 
 
         
-		const res = await useFetch("http://localhost:3000/api/login", {
+		const {data} = await useFetch("http://localhost:3000/api/login", {
 			method: "post",
             mode:"no-cors",
 			body: {
@@ -17,7 +17,7 @@ const router = useRouter()
 				password:user_login.value.password,
 			},
 		}); 
-		const { msg } = res.data.value;
+		const { msg } = toRaw(data.value);
 		if (msg === "login successfull") {
             logged.value = true
 			router.push("/");
