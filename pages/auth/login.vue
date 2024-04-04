@@ -9,7 +9,7 @@ const router = useRouter()
 	const handleLogin = async () => { 
 
         
-		const {data} = await useFetch("http://localhost:3000/api/login", {
+		const {data} = await useFetch('/api/login', {
 			method: "post",
             mode:"no-cors",
 			body: {
