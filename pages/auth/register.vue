@@ -6,41 +6,40 @@
 		email: "",
 		password: "",
 	});
-
 	const handleRegister = async () => {
-		const {data} = await useFetch('/api/register', {
+		const { data } = await useFetch("/api/register", {
 			method: "post",
-            mode: "no-cors",
+			mode: "no-cors",
 			headers: {
-				"Content-Type": "application/json", 
+				"Content-Type": "application/json",
 			},
 			body: {
 				name: user_login.value.name,
 				email: user_login.value.email,
 				password: user_login.value.password,
 			},
-			
 		});
-        console.log(data)
-        console.log(data._rawValue)
-        console.log(toRaw(data.value))
+		console.log(data);
+		console.log(data._rawValue);
+		console.log(toRaw(data.value));
 
 		//const {msg}  = toRaw(data.value)
-        //console.log(msg)
+		//console.log(msg)
 		if (data.value === "login succesfull") {
 			logged.value = true;
 			router.push("/");
 		} else {
 			alert("invalid argument");
 		}
-		// const { msg } = res.data.value;
+	};
+
+    	// const { msg } = res.data.value;
 		// if (msg === "login succesfull") {
 		// 	logged.value = true;
 		// 	router.push("/");
 		// } else {
 		// 	alert("invalid argument");
 		// }
-	};
 </script>
 
 <template>
