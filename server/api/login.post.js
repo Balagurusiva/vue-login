@@ -1,3 +1,5 @@
+import { User } from "../models/user.model"
+
 export default defineEventHandler(async (event) => {
 
     const { email, password } =  JSON.parse(await readBody(event))
