@@ -15,5 +15,6 @@ export default defineEventHandler(async (event) => {
         }
     } catch (error) {
         console.log("error from registration api >>" + error)
+        return error
     }
 })
