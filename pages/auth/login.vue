@@ -12,7 +12,7 @@ const router = useRouter()
 
         const handleLogin = async () => {
 		const res = await axios.post(
-			"https://eclectic-marigold-f6a930.netlify.app/api/login",
+			"https://eclectic-marigold-f6a930.netlify.app/api/",
 			{ 
 				email: user_login.value.email,
 				password: user_login.value.password,
