@@ -8,17 +8,18 @@ export default defineEventHandler(async (event) => {
                 name, email, password
             })
             //return { msg: "login succesfull" }
+            event.res.setHeader('Access-Control-Allow-Origin', '*');
             return "login succesfull"
         } else {
-
+            event.res.setHeader('Access-Control-Allow-Origin', '*');
             return "invalid arguments or data missing"
         }
     } catch (error) {
         console.log("error from registration api >>" + error)
         return error
     }
- 
- 
+
+
 
 
     // try {
