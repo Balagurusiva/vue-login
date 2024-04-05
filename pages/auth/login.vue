@@ -46,7 +46,7 @@
 		//  else{
 		//     alert("invalid data")
 		//  }
-	};
+
 </script>
 
 <template>
