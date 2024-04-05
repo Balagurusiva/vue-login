@@ -27,26 +27,6 @@
 			}
 		};
 
-		// const {data} = await useFetch('/api/login', {
-		// 	method: "post",
-		//     mode:"no-cors",
-		// 	body: {
-		// 		email: user_login.value.email,
-		// 		password:user_login.value.password,
-		// 	},
-		// });
-		// const { msg } = toRaw(data.value);
-		// if (msg === "login successfull") {
-		//     logged.value = true
-		// 	router.push("/");
-		// }
-		//  else if(msg === "data required"){
-		//     alert(" data need")
-		//  }
-		//  else{
-		//     alert("invalid data")
-		//  }
-
 </script>
 
 <template>

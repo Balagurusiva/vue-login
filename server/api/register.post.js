@@ -9,10 +9,14 @@ export default defineEventHandler(async (event) => {
             })
             //return { msg: "login succesfull" }
             event.node.res.setHeader('Access-Control-Allow-Origin', '*');
-            return "login succesfull"
-        } else {
-            event.node.res.setHeader('Access-Control-Allow-Origin', '*');
-            return "invalid arguments or data missing"
+            event.node.res.setHeader('Origin, X-Requested-With, Content-Type, Accept, Authorization');
+            if (event.node.req.method === 'OPTIONS') {
+                event.node.res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+                return "login succesfull"
+            } else {
+                event.node.res.setHeader('Access-Control-Allow-Origin', '*');
+                return "invalid arguments or data missing"
+            }
         }
     } catch (error) {
         console.log("error from registration api >>" + error)
