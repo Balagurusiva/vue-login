@@ -19,13 +19,14 @@
 				}
 			);
 
-			if (res.data === "login succesfull") {
+			if (res.data === "login successfull") {
 				logged.value = true;
 				router.push("/");
 			} else {
 				alert("invalid argument");
 			}
-	 
+		};
+
 		// const {data} = await useFetch('/api/login', {
 		// 	method: "post",
 		//     mode:"no-cors",
