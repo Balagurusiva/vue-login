@@ -7,9 +7,10 @@
 	});
 
 	const handleLogin = async () => {
+        console.log("cliked")
 		const axios = useNuxtApp().$axios;
         
-		const handleRegister = async () => {
+	 
 			const res = await axios.post(
 				"https://eclectic-marigold-f6a930.netlify.app/api/login",
 				{
@@ -24,8 +25,7 @@
 			} else {
 				alert("invalid argument");
 			}
-		};
-
+	 
 		// const {data} = await useFetch('/api/login', {
 		// 	method: "post",
 		//     mode:"no-cors",
