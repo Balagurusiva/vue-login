@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
                 name, email, password
             }) 
             event.node.res.setHeader('Access-Control-Allow-Origin', '*');
-            return "login successfull"
+            return "login succesfull"
         } else {
             event.node.res.setHeader('Access-Control-Allow-Origin', '*');
             return "invalid arguments or data missing"
