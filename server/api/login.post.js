@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
         } else {
             return { msg: "data required" }
         }
-
+ 
     } catch (error) {
         console.log(error)
         return error
