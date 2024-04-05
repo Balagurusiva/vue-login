@@ -1,52 +1,50 @@
 <script setup>
-import { logged } from '~/store/logged'; 
-const router = useRouter()
+	import { logged } from "~/store/logged";
+	const router = useRouter();
 	const user_login = ref({
 		email: "",
 		password: "",
-	}); 
+	});
 
-	const handleLogin = async () => { 
-
-       const axios = useNuxtApp().$axios;
-
-        const handleLogin = async () => {
-		const res = await axios.post(
-			"https://eclectic-marigold-f6a930.netlify.app/api/",
-			{ 
-				email: user_login.value.email,
-				password: user_login.value.password,
-			}
-		);
-
-		if (res.data === "login succesfull") {
-			logged.value = true;
-			router.push("/");
-		} else {
-			alert("invalid argument");
-		}
-	};
-
+	const handleLogin = async () => {
+		const axios = useNuxtApp().$axios;
         
+		const handleRegister = async () => {
+			const res = await axios.post(
+				"https://eclectic-marigold-f6a930.netlify.app/api/login",
+				{
+					email: user_login.value.email,
+					password: user_login.value.password,
+				}
+			);
+
+			if (res.data === "login succesfull") {
+				logged.value = true;
+				router.push("/");
+			} else {
+				alert("invalid argument");
+			}
+		};
+
 		// const {data} = await useFetch('/api/login', {
 		// 	method: "post",
-        //     mode:"no-cors",
+		//     mode:"no-cors",
 		// 	body: {
 		// 		email: user_login.value.email,
 		// 		password:user_login.value.password,
 		// 	},
-		// }); 
+		// });
 		// const { msg } = toRaw(data.value);
 		// if (msg === "login successfull") {
-        //     logged.value = true
+		//     logged.value = true
 		// 	router.push("/");
 		// }
-        //  else if(msg === "data required"){
-        //     alert(" data need")
-        //  }
-        //  else{
-        //     alert("invalid data")
-        //  }
+		//  else if(msg === "data required"){
+		//     alert(" data need")
+		//  }
+		//  else{
+		//     alert("invalid data")
+		//  }
 	};
 </script>
 
@@ -67,7 +65,7 @@ const router = useRouter()
 			<div class="flex flex-col justify-between gap-[30px] w-full items-center">
 				<p class="text-center text-[30px] text-[#7A999C] underline mb-[20px]">
 					Login
-				</p> 
+				</p>
 
 				<div class="input-contair w-full px-5 md:w-[70%]">
 					<div class="border-b-2 border-[#7a999c] bg-red mb-[30px]">
