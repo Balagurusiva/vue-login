@@ -8,14 +8,14 @@ export default defineNuxtConfig({
 		modelsDir: "models",
 		devtools: true,
 	},
-	axios: {
-		proxy: true,
-	},
-	proxy: {
-		"/api/": {
-			target: "https://eclectic-marigold-f6a930.netlify.app",
-			pathRewrite: { "^/api/": "" },
-			changeOrigin: true,
-		},
-	},
+	// axios: {
+	// 	proxy: true,
+	// },
+	// proxy: {
+	// 	"/api/": {
+	// 		target: "https://eclectic-marigold-f6a930.netlify.app",
+	// 		pathRewrite: { "^/api/": "" },
+	// 		changeOrigin: true,
+	// 	},
+	// },
 });

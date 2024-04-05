@@ -8,26 +8,45 @@ const router = useRouter()
 
 	const handleLogin = async () => { 
 
-        
-		const {data} = await useFetch('/api/login', {
-			method: "post",
-            mode:"no-cors",
-			body: {
+       const axios = useNuxtApp().$axios;
+
+        const handleLogin = async () => {
+		const res = await axios.post(
+			"https://eclectic-marigold-f6a930.netlify.app/api/login",
+			{ 
 				email: user_login.value.email,
-				password:user_login.value.password,
-			},
-		}); 
-		const { msg } = toRaw(data.value);
-		if (msg === "login successfull") {
-            logged.value = true
+				password: user_login.value.password,
+			}
+		);
+
+		if (res.data === "login succesfull") {
+			logged.value = true;
 			router.push("/");
+		} else {
+			alert("invalid argument");
 		}
-         else if(msg === "data required"){
-            alert(" data need")
-         }
-         else{
-            alert("invalid data")
-         }
+	};
+
+        
+		// const {data} = await useFetch('/api/login', {
+		// 	method: "post",
+        //     mode:"no-cors",
+		// 	body: {
+		// 		email: user_login.value.email,
+		// 		password:user_login.value.password,
+		// 	},
+		// }); 
+		// const { msg } = toRaw(data.value);
+		// if (msg === "login successfull") {
+        //     logged.value = true
+		// 	router.push("/");
+		// }
+        //  else if(msg === "data required"){
+        //     alert(" data need")
+        //  }
+        //  else{
+        //     alert("invalid data")
+        //  }
 	};
 </script>
 
